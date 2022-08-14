@@ -32,3 +32,15 @@ function getPlayerChoice() {
     }
   }
 }
+
+function playRound(playerSelection, computerSelection) {
+  // Capitalize first letter of each string
+  playerSelection = playerSelection[0].toUpperCase() + playerSelection.slice(1);
+  computerSelection = computerSelection[0].toUpperCase() + computerSelection.slice(1);
+  // We can just compare strings here to get a winner
+  return playerSelection < computerSelection ? 
+  `You win! ${playerSelection} beats ${computerSelection}!` :
+  playerSelection === computerSelection ?
+  `Draw!` :
+  `You lose! ${computerSelection} beats ${playerSelection}`;
+}
