@@ -44,3 +44,36 @@ function playRound(playerSelection, computerSelection) {
   `Draw!` :
   `You lose! ${computerSelection} beats ${playerSelection}`;
 }
+
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+  // Player chooses number of rounds to play
+  let maxRounds = parseInt(prompt('How many rounds would you like to play?'));
+  // Loop as many times as maxRounds, calling the playRounds function each time
+  for (i = 1; i <= maxRounds; i++) {
+    let currentRound = playRound(getPlayerChoice(i, maxRounds), getComputerChoice());
+    alert(`Round ${i} of ${maxRounds}
+${currentRound}`);
+    // Increase player scores, or don't do anything if draw
+    if (currentRound.startsWith('You win')) {
+      playerScore++;
+    } else if (currentRound.startsWith('You lose')) {
+      computerScore++;
+    }
+  }
+
+  // Print game results
+  if (playerScore > computerScore) {
+    alert(`You win the game!\n\nYour score: ${playerScore}
+Computer score: ${computerScore}`);
+  } else if (computerScore > playerScore) {
+    alert(`You lose the game\n\nYour score: ${playerScore}
+Computer score: ${computerScore}`);
+  } else {
+    alert(`Game is draw!\n\nYour score: ${playerScore}
+Computer score: ${computerScore}`);
+  }
+}
+
+game();
