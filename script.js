@@ -131,7 +131,7 @@ function getMaxRounds() {
 }
 
 function start() {
-  keepPlaying = true;
+  let keepPlaying = true;
   // keep looping until player doesn't want to play anymore
   while (keepPlaying) {
     game();
