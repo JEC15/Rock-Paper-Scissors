@@ -83,7 +83,7 @@ startBtn.addEventListener('click', () => {
   resetCounters();
   clearText();
   gameButtons.forEach(button => toggleVisibility(button, 'inline'));
-  toggleVisibility(startBtn, 'block');
+  toggleVisibility(startBtn, 'none');
 });
 
 gameButtons.forEach(button => button.addEventListener('click', () => {  
